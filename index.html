@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>프랑스 혁명 타임라인 & 탐구 보고서</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; background-color: #f8fafc; }
+        
+        /* 타임라인 중앙선 */
+        .timeline-line {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background-color: #cbd5e1;
+            z-index: 0;
+        }
+        
+        @media (max-width: 768px) {
+            .timeline-line { left: 24px; }
+            .timeline-card { width: 100% !important; padding-left: 60px !important; }
+            .timeline-dot { left: 24px !important; }
+        }
+
+        /* 인쇄 전용 스타일 (보고서만 인쇄되도록 설정) */
+        @media print {
+            body * { visibility: hidden; }
+            #reportResult, #reportResult * { visibility: visible; }
+            #reportResult {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                margin: 0;
+                padding: 20px;
+                box-shadow: none;
+            }
+            .no-print { display: none !important; }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <header class="bg-indigo-900 text-white py-16 text-center shadow-lg relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-cover bg-center" style="background-image: url('https://placehold.co/1920x400/4c1d95/ffffff?text=French+Revolution');"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-black mb-4 tracking-tight">세상을 바꾼 시민들의 외침</h1>
+            <h2 class="text-2xl text-indigo-200 font-light">프랑스 혁명 (1789 ~ 1794)</h2>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 py-12 relative">
+        
+        <!-- 타임라인 시작 -->
+        <div class="relative mb-20 no-print">
+            <div class="timeline-line hidden md:block"></div>
+            
+            <!-- 1. 불만으로 가득 찬 프랑스 -->
+            <div class="relative flex justify-start items-center mb-16 timeline-card w-1/2 pr-12 md:pr-12 md:ml-0 md:justify-end md:w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-indigo-600 border-4 border-white rounded-full z-10 timeline-dot md:flex hidden justify-center items-center"><i class="fas fa-crown text-white text-xs"></i></div>
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-full md:w-[45%] border-t-4 border-indigo-500 transition hover:shadow-2xl hover:-translate-y-1">
+                    <span class="text-indigo-600 font-bold text-sm mb-2 block">1789년 5월 ~ 6월</span>
+                    <h3 class="text-2xl font-bold mb-3">구제도의 모순과 테니스 코트의 서약</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        인구의 2%인 성직자와 귀족은 세금을 면제받고, 98%인 평민만 무거운 세금에 시달렸습니다(구제도의 모순). 국가 재정이 파탄 나자 왕은 세금을 걷기 위해 삼부회를 소집했지만, 평민 대표들은 불평등한 투표 방식에 반발하여 '국민 의회'를 결성하고 헌법 제정을 요구했습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. 혁명의 불꽃 -->
+            <div class="relative flex justify-end items-center mb-16 timeline-card w-1/2 pl-12 md:pl-12 md:w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-red-600 border-4 border-white rounded-full z-10 timeline-dot md:flex hidden justify-center items-center"><i class="fas fa-fire text-white text-xs"></i></div>
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-full md:w-[45%] border-t-4 border-red-500 transition hover:shadow-2xl hover:-translate-y-1">
+                    <span class="text-red-600 font-bold text-sm mb-2 block">1789년 7월 ~ 8월</span>
+                    <h3 class="text-2xl font-bold mb-3">바스티유 습격과 인권 선언</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        국왕이 군대를 동원해 국민 의회를 탄압하려 하자, 분노한 파리 시민들은 전제 정치의 상징인 '바스티유 감옥'을 습격했습니다. 이후 국민 의회는 봉건제 폐지를 선언하고, 자유·평등·국민 주권의 원칙을 담은 **'인권 선언'**을 발표하여 근대 민주주의의 기틀을 마련했습니다.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. 피의 시대 -->
+            <div class="relative flex justify-start items-center mb-16 timeline-card w-1/2 pr-12 md:pr-12 md:ml-0 md:justify-end md:w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-gray-800 border-4 border-white rounded-full z-10 timeline-dot md:flex hidden justify-center items-center"><i class="fas fa-skull text-white text-xs"></i></div>
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-full md:w-[45%] border-t-4 border-gray-800 transition hover:shadow-2xl hover:-translate-y-1">
+                    <span class="text-gray-800 font-bold text-sm mb-2 block">1792년 ~ 1794년</span>
+                    <h3 class="text-2xl font-bold mb-3">루이 16세 처형과 공포 정치</h3>
+                    <p class="text-gray-600 leading-relaxed text-sm">
+                        혁명 전쟁의 위기 속에서 왕정이 폐지되고 공화정이 선포되었으며, 루이 16세는 단두대에서 처형되었습니다. 권력을 잡은 로베스피에르는 개혁을 시도했지만, 혁명에 반대하는 자들을 무자비하게 처형하는 '공포 정치'를 펼치다 결국 시민들의 반발로 본인도 처형당합니다.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- 4. 추천 영상 -->
+            <div class="relative flex justify-end items-center mb-16 timeline-card w-1/2 pl-12 md:pl-12 md:w-full">
+                <div class="absolute left-1/2 transform -translate-x-1/2 w-8 h-8 bg-blue-600 border-4 border-white rounded-full z-10 timeline-dot md:flex hidden justify-center items-center"><i class="fas fa-play text-white text-xs" style="margin-left: 2px;"></i></div>
+                <div class="bg-white p-6 rounded-2xl shadow-xl w-full md:w-[45%] border-t-4 border-blue-500">
+                    <span class="text-blue-600 font-bold text-sm mb-2 block">시청각 자료 (유튜브 연계)</span>
+                    <h3 class="text-2xl font-bold mb-4">4. 5분 만에 정리하는 프랑스 혁명</h3>
+                    <div class="relative w-full overflow-hidden rounded-lg pb-[56.25%]">
+                        <iframe class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/_QQiq9C1ekU" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen>
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. 활동 보고서 폼 -->
+        <section id="reportFormSection" class="bg-white rounded-3xl shadow-2xl p-8 md:p-12 mb-12 border border-gray-100 no-print">
+            <h2 class="text-3xl font-black text-center mb-2"><i class="fas fa-pen-nib text-indigo-600 mr-2"></i>프랑스 혁명 탐구 보고서</h2>
+            <p class="text-center text-gray-500 mb-10">위의 타임라인과 영상을 학습한 후, 아래의 보고서를 작성하여 제출해 주세요.</p>
+            
+            <div id="alertBox" class="hidden mb-6 p-4 rounded-lg font-bold text-center"></div>
+
+            <div class="space-y-8">
+                <!-- 학생 정보 -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">가. 반</label>
+                        <input type="number" id="classNum" placeholder="예) 3" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">나. 번호</label>
+                        <input type="number" id="studentNum" placeholder="예) 15" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-2">다. 이름</label>
+                        <input type="text" id="studentName" placeholder="홍길동" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition">
+                    </div>
+                </div>
+
+                <hr class="border-gray-200">
+
+                <!-- 객관식 (데이터 편향성) -->
+                <div>
+                    <label class="block text-lg font-bold text-gray-800 mb-4">라. [객관식] 역사 기록과 데이터 편향성</label>
+                    <div class="bg-gray-50 p-6 rounded-xl border border-gray-200 mb-4">
+                        <p class="text-gray-700 font-medium mb-2 leading-relaxed">
+                            우리가 배우는 역사는 과거 사람들의 '기록(데이터)'을 바탕으로 합니다. 하지만 기록하는 사람의 신분이나 입장에 따라 데이터가 편향될 수 있습니다. 
+                            <br><br>
+                            질문: 만약 프랑스 혁명 당시의 모든 기록(데이터)이 '제1, 2신분(성직자, 귀족)'의 입장에서만 작성되어 현대로 전해졌다면, 이 <b>'편향된 데이터'</b>를 비판 없이 수용할 때 발생할 수 있는 가장 큰 문제점은 무엇일까요?
+                        </p>
+                    </div>
+                    <div class="space-y-3">
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50 transition">
+                            <input type="radio" name="mcq" value="1" class="w-5 h-5 text-indigo-600">
+                            <span class="ml-3 text-gray-700">과거의 기록은 무조건 사실이므로 완벽한 진실을 알 수 있다.</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50 transition">
+                            <input type="radio" name="mcq" value="2" class="w-5 h-5 text-indigo-600">
+                            <span class="ml-3 text-gray-700">제3신분(평민)이 겪었던 고통과 혁명의 정당성이 역사에서 지워지거나 왜곡될 수 있다.</span>
+                        </label>
+                        <label class="flex items-center p-4 border border-gray-200 rounded-lg cursor-pointer hover:bg-indigo-50 transition">
+                            <input type="radio" name="mcq" value="3" class="w-5 h-5 text-indigo-600">
+                            <span class="ml-3 text-gray-700">프랑스 혁명의 전개 과정이 오히려 객관적이고 과학적으로 증명된다.</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- 서술형 (이론 + 영상 종합) -->
+                <div>
+                    <label class="block text-lg font-bold text-gray-800 mb-4">마. [서술형] 혁명의 유산과 나의 생각</label>
+                    <p class="text-gray-600 text-sm mb-3">타임라인의 내용과 유튜브 영상을 종합하여, <b>'프랑스 혁명이 현재 우리가 누리는 민주주의와 인권에 미친 영향'</b>을 자신의 생각과 함께 서술해 보세요. (200자 내외)</p>
+                    <textarea id="essayAnswer" rows="5" placeholder="이곳에 보고서 내용을 작성해 주세요..." class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500 focus:border-transparent outline-none transition resize-none"></textarea>
+                </div>
+
+                <!-- 제출 버튼 -->
+                <button id="submitBtn" onclick="submitToGoogleSheet()" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold text-xl py-4 rounded-xl shadow-lg transition duration-300 flex justify-center items-center">
+                    <i class="fas fa-paper-plane mr-2"></i> 보고서 생성 및 구글 시트로 제출
+                </button>
+            </div>
+        </section>
+
+        <!-- 제출 완료 후 렌더링 되는 보고서 (인쇄용) -->
+        <section id="reportResult" class="hidden bg-white p-10 rounded-2xl shadow-md border-2 border-gray-800">
+            <div class="text-center mb-8 border-b-4 border-double border-gray-800 pb-6">
+                <h2 class="text-3xl font-black mb-2">프랑스 혁명 탐구 보고서</h2>
+                <p class="text-xl font-bold text-gray-700" id="resStudentInfo">제 3학년 0반 00번 이름: 홍길동</p>
+                <p class="text-sm text-gray-500 mt-2" id="resDate"></p>
+            </div>
+            
+            <div class="mb-8">
+                <h3 class="text-xl font-bold border-b-2 border-gray-300 pb-2 mb-4">1. 역사 기록과 데이터 편향성 (객관식)</h3>
+                <p class="text-gray-800 leading-relaxed bg-gray-100 p-4 rounded-lg">
+                    <span class="font-bold text-indigo-700 mr-2">선택한 답안:</span> 
+                    <span id="resMcq"></span>
+                </p>
+                <p id="resMcqFeedback" class="mt-2 text-sm font-bold"></p>
+            </div>
+
+            <div class="mb-8">
+                <h3 class="text-xl font-bold border-b-2 border-gray-300 pb-2 mb-4">2. 혁명의 유산과 나의 생각 (서술형)</h3>
+                <p class="text-gray-800 leading-relaxed whitespace-pre-wrap min-h-[150px]" id="resEssay"></p>
+            </div>
+            
+            <div class="text-center mt-12 text-gray-500 font-bold">
+                - 역사 탐구 활동 완료 -
+            </div>
+
+            <!-- 인쇄 버튼 (인쇄 시에는 안 보임) -->
+            <div class="text-center mt-8 no-print">
+                <button onclick="window.print()" class="bg-gray-800 hover:bg-gray-900 text-white font-bold py-3 px-8 rounded-full shadow-lg transition">
+                    <i class="fas fa-print mr-2"></i> PDF 저장 및 인쇄하기
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // 사용자(선생님)가 새롭게 배포한 Apps Script 웹앱 URL
+        const GAS_WEB_APP_URL = "https://script.google.com/macros/s/AKfycbwGo5EsRe3E0Pf7yotlnQAw7xpG4doCbi4DNfz7xMLkbwMjNzhfcZbijW6nRy3xMWMh/exec";
+
+        function showMessage(msg, type) {
+            const box = document.getElementById('alertBox');
+            box.style.display = 'block';
+            box.innerText = msg;
+            if (type === 'error') {
+                box.className = 'mb-6 p-4 rounded-lg font-bold text-center bg-red-100 text-red-700 border border-red-300';
+            } else {
+                box.className = 'mb-6 p-4 rounded-lg font-bold text-center bg-green-100 text-green-700 border border-green-300';
+            }
+        }
+
+        async function submitToGoogleSheet() {
+            // 1. 값 가져오기
+            const cNum = document.getElementById('classNum').value.trim();
+            const sNum = document.getElementById('studentNum').value.trim();
+            const sName = document.getElementById('studentName').value.trim();
+            const mcqNode = document.querySelector('input[name="mcq"]:checked');
+            const essay = document.getElementById('essayAnswer').value.trim();
+
+            // 2. 유효성 검사
+            if (!cNum || !sNum || !sName) {
+                showMessage("❗ 반, 번호, 이름을 모두 입력해 주세요.", "error");
+                return;
+            }
+            if (!mcqNode) {
+                showMessage("❗ 라항(객관식) 문제의 답을 선택해 주세요.", "error");
+                return;
+            }
+            if (!essay || essay.length < 10) {
+                showMessage("❗ 마항(서술형) 보고서 내용을 충분히 작성해 주세요.", "error");
+                return;
+            }
+
+            // 3. 버튼 상태 변경 (로딩)
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i> 보고서 생성 및 시트 전송 중...';
+            btn.classList.replace('bg-indigo-600', 'bg-gray-400');
+            btn.classList.replace('hover:bg-indigo-700', 'hover:bg-gray-400');
+
+            // 4. 데이터 구성
+            const mcqValue = mcqNode.value;
+            // 2번이 정답. 구글 시트 E열에 들어갈 점수 텍스트
+            const mcScoreText = (mcqValue === "2") ? "정답 (2번)" : `오답 (${mcqValue}번 선택)`;
+
+            const payload = {
+                classNum: cNum,
+                studentNum: sNum,
+                studentName: sName,
+                mcScore: mcScoreText,
+                essayAnswer: essay
+            };
+
+            try {
+                // 5. 구글 시트로 POST 요청 (브라우저 CORS 오류 방지를 위해 mode: 'no-cors' 적용)
+                await fetch(GAS_WEB_APP_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // CORS 정책 우회 (가장 중요)
+                    headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+                    body: JSON.stringify(payload)
+                });
+
+                // no-cors 모드에서는 응답(response)을 자세히 읽을 수 없으므로, 네트워크 에러가 없으면 성공으로 간주합니다.
+                showMessage("✅ 제출이 완료되었습니다! 생성된 보고서를 확인하세요.", "success");
+                btn.innerHTML = '<i class="fas fa-check mr-2"></i> 제출 완료';
+                btn.classList.replace('bg-gray-400', 'bg-green-600');
+
+                // 6. 보고서 렌더링
+                renderReport(cNum, sNum, sName, mcqValue, mcScoreText, essay);
+
+            } catch (error) {
+                console.error("전송 에러:", error);
+                showMessage(`❌ 전송 실패: 인터넷 연결을 확인하거나, 구글 스크립트 권한 설정을 다시 확인해 주세요.`, "error");
+                btn.disabled = false;
+                btn.innerHTML = '<i class="fas fa-paper-plane mr-2"></i> 다시 제출하기';
+                btn.classList.replace('bg-gray-400', 'bg-indigo-600');
+                btn.classList.replace('hover:bg-gray-400', 'hover:bg-indigo-700');
+            }
+        }
+
+        // 보고서 결과 화면 렌더링 함수
+        function renderReport(cNum, sNum, sName, mcqValue, mcScoreText, essay) {
+            // 정보 세팅
+            document.getElementById('resStudentInfo').innerText = `제 3학년 ${cNum}반 ${sNum}번 이름: ${sName}`;
+            
+            const now = new Date();
+            document.getElementById('resDate').innerText = `제출 일시: ${now.toLocaleString()}`;
+
+            // 객관식 텍스트화
+            let mcqText = "";
+            if(mcqValue === "1") mcqText = "과거의 기록은 무조건 사실이므로 완벽한 진실을 알 수 있다.";
+            else if(mcqValue === "2") mcqText = "제3신분(평민)이 겪었던 고통과 혁명의 정당성이 역사에서 지워지거나 왜곡될 수 있다.";
+            else if(mcqValue === "3") mcqText = "프랑스 혁명의 전개 과정이 오히려 객관적이고 과학적으로 증명된다.";
+
+            document.getElementById('resMcq').innerText = mcqText;
+            
+            const fbEl = document.getElementById('resMcqFeedback');
+            if (mcqValue === "2") {
+                fbEl.innerText = "✓ 정답입니다! 기록자의 입장에 따라 데이터가 편향될 수 있음을 잘 이해했습니다.";
+                fbEl.className = "mt-2 text-sm font-bold text-green-600";
+            } else {
+                fbEl.innerText = "✗ 오답입니다. 정답은 2번입니다. (편향된 데이터는 왜곡된 진실을 만들 수 있습니다.)";
+                fbEl.className = "mt-2 text-sm font-bold text-red-600";
+            }
+
+            // 서술형 세팅
+            document.getElementById('resEssay').innerText = essay;
+
+            // UI 전환 (폼은 비활성화 느낌으로 두고, 리포트 표시)
+            document.getElementById('reportFormSection').style.opacity = "0.4";
+            document.getElementById('reportFormSection').style.pointerEvents = "none";
+            
+            const reportResult = document.getElementById('reportResult');
+            reportResult.classList.remove('hidden');
+            
+            // 리포트 쪽으로 스크롤 부드럽게 이동
+            reportResult.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    </script>
+</body>
+</html>
